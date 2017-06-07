@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f0093f7939c54427a658d30e0dcb4bea" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.RoleConformity" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.Guild" Width="1.5" PointX="0.5" PointY="4.75" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_RoleConformity_ToGuild" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.BlockedCommand" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_BlockedCommand_ToGuild" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.BlockedModule" Width="1.5" PointX="5.625" PointY="4.125" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_BlockedModule_ToGuild" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.Filter" Width="1.5" PointX="3" PointY="1.25" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_Filter_ToGuild" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.Session" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.User" Width="1.5" PointX="7.625" PointY="4.125" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_Session_ToUser" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.UserToGuild" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.ApplicationLog" Width="1.5" PointX="9.875" PointY="4.25" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.VoiceChannel" Width="1.5" PointX="2.75" PointY="6.625" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.VoiceChannelLog" Width="1.5" PointX="9.875" PointY="7.25" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_ApplicationLog_ToUser" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_VoiceChannel_ToGuild" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_VoiceChannelLog_ToUser" />
+        <AssociationConnector Association="ProjectRichardDataBaseModel.FK_VoiceChannelLog_ToVoiceChannel" />
+        <EntityTypeShape EntityType="ProjectRichardDataBaseModel.Advertising" Width="1.5" PointX="7.5" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

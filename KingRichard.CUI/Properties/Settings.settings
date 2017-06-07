@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KingRichard.CUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BotToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MjY5MjE3ODgzNjcyODA1Mzc4.C1mIOQ.R4OKuCoBiHfijp85xRAgZBG5NLI</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

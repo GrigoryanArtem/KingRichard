@@ -1,0 +1,150 @@
+
+// ==========================================================================
+//  GPPG error listing for yacc source file <CalculatorSyntaxUnit.y>
+// ==========================================================================
+//  Version:  1.3.6
+//  Machine:  LIFSHITZ
+//  DateTime: 19.05.2017 15:39:05
+//  UserName: artem
+// ==========================================================================
+
+
+%output=CalculatorSyntaxUnit.cs 
+
+%{
+	public Parser(CalculatorLexicalScanner.Scanner scanner) : base(scanner) { }
+	public double Result{ get; private set; }
+%}
+
+%union { 
+	public string sVal;
+	public double dVal;
+}
+
+%using System.IO
+
+%namespace CalculatorSyntaxScanner
+
+%start main_expression
+
+%token <sVal> Int Double
+%token Plus Minus Mult Divide Pow Sqrt Log Ln Pi Exp Sin Cos Tangent Cotangent Exclamations ModuleBracket LeftBracketS RightBracketS LeftBracket RightBracket Comma
+%type <dVal> expression md_expression pow_expression f_expression uf_expression df_expression u_expression atom
+
+%%
+// Error: NonTerminal symbol "RightBracke" has no productions
+// Warning: Terminating RightBracke fixes the following size-2 NonTerminal set
+   // {df_expression, RightBracke}
+// Error: There are 2 non-terminating NonTerminal Symbols
+   //  {df_expression, RightBracke}
+// ---------------------------------------------------------------------------
+
+main_expression : expression { 
+					Result = $1;
+				}
+				;
+
+expression	    : md_expression { 
+					$$ = $1;
+				}
+			    | expression Plus md_expression {
+					$$ = $1 + $3;
+				}
+				| expression Minus md_expression {
+					$$ = $1 - $3;
+				}
+			    ;
+
+md_expression   : pow_expression  { 
+					$$ = $1;
+				}
+			    | md_expression Mult pow_expression {
+					$$ = $1 * $3;
+				}
+				| md_expression Divide pow_expression {
+					$$ = $1 / $3;
+				}
+			    ;
+
+pow_expression  : f_expression  { 
+					$$ = $1;
+				}
+			    | pow_expression Pow f_expression {
+					$$ = Math.Pow($1, $3);
+				}
+			    ;
+
+f_expression    : u_expression {
+					$$ = $1;
+				}
+				| uf_expression {
+					$$ = $1;		
+				}
+				| df_expression {
+					$$ = $1;		
+				}
+				;
+
+uf_expression   : Sqrt LeftBracket u_expression RightBracket {
+					$$ = Math.Sqrt($3);
+				}
+				| Ln LeftBracket u_expression RightBracket {
+					$$ = Math.Log($3);
+				}
+				| Sin LeftBracket u_expression RightBracket {
+					$$ = Math.Sin($3);
+				}
+				| Cos LeftBracket u_expression RightBracket {
+					$$ = Math.Cos($3);
+				}
+				| Tangent LeftBracket u_expression RightBracket {
+					$$ = Math.Tan($3);
+				}
+				| Cotangent LeftBracket u_expression RightBracket {
+					$$ = 1 / Math.Tan($3);
+				}
+				| ModuleBracket u_expression ModuleBracket {
+					$$ = Math.Abs($2);
+				}
+				| u_expression Exclamations {
+					$$ = RichardMath.Factorial($1);
+				}
+				;
+
+df_expression   : Log LeftBracket u_expression Comma u_expression RightBracke {
+					$$ = log($5) / log($3); 
+				}
+				;
+
+u_expression    : atom  { 
+					$$ = $1;
+				}
+			    | Plus atom {
+					$$ =  $2;
+				}
+				| Minus atom {
+					$$ = -$2;
+				}
+			    ;
+		
+atom            : Double  { 
+					$$ = Convert.ToDouble($1);
+				}
+				| Int { 
+					$$ = Convert.ToDouble($1);
+				}
+				| Pi {
+					$$ = Math.Pi;
+				}
+				| Exp {
+					$$ = Math.E;
+				}
+			    | LeftBracket expression RightBracket {
+					$$ =  $2;
+				}
+				| LeftBracketS expression RightBracketS {
+					$$ =  $2;
+				}
+				;
+%%// ==========================================================================
+

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="0aebb5fe-0ced-4128-9d29-541a375febf1" name="MainModel" linkedPackageId="51b76592-5938-43d3-bc7c-5cf55b49d42d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a06ac0b6-d6b2-41fb-b8e2-64113fccc4df">
+      <profileInstance Id="79f2daac-08cd-40bd-88ee-8c8f77a9ed38" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="385fb502-9ab2-46fb-8b52-f54c78052ea3">
+      <profileInstance Id="7d7412c3-6cdb-437f-91ad-e38e4422e5dc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="cb615150-1898-4ac9-b0f2-c7ef43d87e91" name="KingRichard.CUI">
+        <elementDefinition Id="5331a931-bbf7-41a9-bafb-f4b0908542df" />
+        <suppliersInternal>
+          <dependency Id="13896ef5-6884-404d-9a36-5fcfafeae4b6">
+            <packageMoniker Id="3a863e4b-ce49-4f55-98d0-0177608d6f8b" LastKnownName="KingRichard.Bot" />
+            <elementDefinition Id="f99eace1-dd1c-4781-93be-59999b95dd6c" />
+          </dependency>
+        </suppliersInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="7fb21588-33e9-4923-8f7f-b66bc4fd50d2" name="Program" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="d869e3ba-5f91-47ae-b7fa-c25228555b42" />
+              <suppliersInternal>
+                <dependency Id="7e2dc2cd-c546-4966-90e2-5a16963f3cb4">
+                  <classMoniker Id="f045dffb-cf34-4f8a-a91d-5963bf0d4052" LastKnownName="DiscordBot" />
+                  <elementDefinition Id="8a22323b-a665-4049-90f5-03bac8fbd042" />
+                </dependency>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="76ed73b8-9ca4-4a28-ac37-db872173117b" name="Main" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1a550d9f-d268-4a0d-81e4-26cb5b6fe8aa" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fbe12a9d-2d77-4759-ba23-d24751888df8" name="string[] args" direction="In" isUnique="false">
+                        <elementDefinition Id="cb5e9875-30b2-47e2-815e-2512cbbee2c4" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3a863e4b-ce49-4f55-98d0-0177608d6f8b" name="KingRichard.Bot">
+        <elementDefinition Id="81f68e1c-9159-4449-bb37-a52133b09ef5" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="1bd86d25-2e9c-4cc2-9476-18877bca2300" name="KingRichard.Bot.Modules">
+              <elementDefinition Id="73b602c9-1cc1-4cbf-814c-61d954c8b609" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <Interface Id="971ac735-74da-4bd4-8dfc-08e6d265f573" name="IModulesController" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="8b37ce14-0080-42cb-9293-f8d680894de9" />
+                    <suppliersInternal>
+                      <dependency Id="76780797-5d58-48b7-a345-ce4001864a63">
+                        <interfaceMoniker Id="c25a9121-a392-47c9-af4a-722126d54c81" LastKnownName="IModule" />
+                        <elementDefinition Id="b39dfc4c-e4a8-422b-b242-54d14c1487d5" />
+                      </dependency>
+                    </suppliersInternal>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="c25a9121-a392-47c9-af4a-722126d54c81" name="IModule" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="924ba63c-2577-4891-8d02-fb95c99e1844" />
+                    <ownedOperations>
+                      <operation Id="28ef3b04-97b5-459a-a988-85aee488034c" name="Run" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="dd2eb338-e531-491a-b4fe-adfffa59c555" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="4bceb7e4-9b48-423f-938a-c7f4ce6d5736" name="CommandService service" direction="In" isUnique="false">
+                              <elementDefinition Id="d2b86446-eae2-4376-9cb4-ac8f1ffef178" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="bdbf9c3a-0290-43cf-9ca6-63ed1fac9926" name="DefaultCommandsModule" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="6bc6aa31-b7af-43ee-88b2-b1b9e5f75c38" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="bdba4728-b1d6-4ef7-97c0-0987a9d2c55b">
+                        <interfaceMoniker Id="c25a9121-a392-47c9-af4a-722126d54c81" LastKnownName="IModule" />
+                        <elementDefinition Id="bd8988fb-04ed-4f13-877a-ef8bc3163263" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="ad2548d5-187a-4297-aa00-4e4cc608ece1" name="Run" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="cd45513b-138e-4878-9c71-af6fb52bde67" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="7167d2a4-7170-48f6-9e06-3c461a3bb72b" name="CommandService service" direction="In" isUnique="false">
+                              <elementDefinition Id="dbafcd46-f561-40a9-89a5-5500fc8aeb55" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f045dffb-cf34-4f8a-a91d-5963bf0d4052" name="DiscordBot" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="503823b8-5978-4240-9df2-b0ddfcb5d9cf" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="7f48d833-9596-4d50-8d32-7d87fe5a1f0f" name="BotException" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1e8d2780-43fd-440b-b07f-42946a14a4f0" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="51b76592-5938-43d3-bc7c-5cf55b49d42d" name="KingRichard.Model">
+    <elementDefinition Id="11cd272b-ebf1-44d0-a3e8-20c15970ea53" />
+  </package>
+</logicalClassDesignerModel>
